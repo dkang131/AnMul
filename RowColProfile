@@ -1,0 +1,10 @@
+library('matlib')
+#R MATRIX
+dr_mat <- matrix(diag(conff[-7,5]), 6, 6)
+inv_dr <- inv(dr_mat)
+R_mat <- inv_dr %*% p_mat
+  
+#C MATRIX
+dc_mat <- matrix(diag(conff[7,-5]), 4, 4)
+inv_dc <- inv(dc_mat)
+C_mat <- p_mat %*% inv_dc
